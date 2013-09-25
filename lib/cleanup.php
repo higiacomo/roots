@@ -1,4 +1,15 @@
 <?php
+
+// remove columns in pages and posts
+// http://www.paulund.co.uk/remove-column-on-pages-table-in-wordpress#more-8299
+function gn_remove_pages_columns($columns) {
+  // @TODO
+  // I should check if yoast is installed and then remove them
+  return $columns;
+}
+add_filter('manage_pages_columns', 'gn_remove_pages_columns');
+
+
 /**
  * Clean up wp_head()
  *
