@@ -2,6 +2,11 @@
 <body <?php body_class(); ?>>
 
   <!--[if lt IE 8]><div class="alert alert-warning"><?php _e('You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.', 'roots'); ?></div><![endif]-->
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+      <!--[if lt IE 9]>
+        <script src="<?php echo get_template_directory_uri() ?>/assets/js/vendor/html5shiv.js"></script>
+        <script src="<?php echo get_template_directory_uri() ?>/assets/js/vendor/respond.min.js"></script>
+      <![endif]-->
 
   <?php
     do_action('get_header');
