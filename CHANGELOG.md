@@ -1,3 +1,15 @@
+### HEAD
+* Don't run JSHint on plugins (`assets/js/plugins/`)
+* Disable warnings about undefined variables (JSHint)
+* Merge in updates from HTML5 Boilerplate
+* Add JS source map (disabled by default)
+* Update to Bootstrap 3.0.2
+* Replace `grunt-recess` with `grunt-contrib-less`, add LESS source map support
+
+### 6.5.1: November 5th, 2013
+* Move clean URLs to a [plugin](https://github.com/roots/roots-rewrites)
+* Update to Bootstrap 3.0.1
+
 ### 6.5.0: August 23rd, 2013
 * Reference new site, [http://roots.io/](http://roots.io/)
 * Remove bundled docs, reference [http://roots.io/docs/](http://roots.io/docs/)
