@@ -61,25 +61,20 @@ add_filter('the_generator', '__return_false');
 /**
  * Clean up language_attributes() used in <html> tag
  *
- * Change lang="en-US" to lang="en"
  * Remove dir="ltr"
  */
 function roots_language_attributes() {
   $attributes = array();
   $output = '';
 
-  if (function_exists('is_rtl')) {
-    if (is_rtl() == 'rtl') {
-      $attributes[] = 'dir="rtl"';
-    }
+  if (is_rtl()) {
+    $attributes[] = 'dir="rtl"';
   }
 
   $lang = get_bloginfo('language');
 
-  if ($lang && $lang !== 'en-US') {
+  if ($lang) {
     $attributes[] = "lang=\"$lang\"";
-  } else {
-    $attributes[] = 'lang="en"';
   }
 
   $output = implode(' ', $attributes);
@@ -174,7 +169,7 @@ function roots_caption($output, $attr, $content) {
   // Set up the attributes for the caption <figure>
   $attributes  = (!empty($attr['id']) ? ' id="' . esc_attr($attr['id']) . '"' : '' );
   $attributes .= ' class="thumbnail wp-caption ' . esc_attr($attr['align']) . '"';
-  $attributes .= ' style="width: ' . esc_attr($attr['width']) . 'px"';
+  $attributes .= ' style="width: ' . (esc_attr($attr['width']) + 10) . 'px"';
 
   $output  = '<figure' . $attributes .'>';
   $output .= do_shortcode($content);
